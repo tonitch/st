@@ -120,11 +120,18 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 258;
-static unsigned int defaultcs = 256;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 257;
 
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+unsigned int defaultitalic = 7;
+unsigned int defaultunderline = 7;
 /*
  * Default shape of cursor
  * 2: Block ("█")
@@ -132,6 +139,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
+
 static unsigned int cursorshape = 2;
 
 /*
